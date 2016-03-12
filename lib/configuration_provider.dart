@@ -15,12 +15,13 @@ class ConfigurationProvider extends PolymerElement {
   @property var runtime;
 
   @Listen("configuration-changed")
-  runtimeReset(e, detail) {
-    this.set('conf', new Configuration(detail));
+  configurationChanged(e, detail) {
+    this.set('conf', new Configuration(detail, runtime.getConfigurationContent(detail)));
   }
 }
 
 class Configuration extends JsProxy {
   @reflectable int id;
-  Configuration(this.id);
+  @reflectable var values;
+  Configuration(this.id, this.values);
 }

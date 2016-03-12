@@ -10,9 +10,4 @@ class ConfigurationView extends PolymerElement {
   ConfigurationView.created() : super.created();
 
   @property var conf;// = 2;
-
-  @reflectable
-  exe(e, _) {
-    window.alert(conf.toString());
-  }
 }
