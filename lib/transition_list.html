@@ -1,0 +1,17 @@
+<dom-module id="transition-list">
+    <style>
+        :host {
+            display: block;
+        }
+        iron-list {
+            height : 200px;
+        }
+    </style>
+    <template>
+        <iron-list scroll-target="html" items="{{fireables}}" as="item">
+            <template>
+                <transition-list-item transition="{{item}}" on-fire-transition="fireTransition"></transition-list-item>
+            </template>
+        </iron-list>
+    </template>
+</dom-module>

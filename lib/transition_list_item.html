@@ -1,0 +1,22 @@
+<dom-module id="transition-list-item">
+    <style>
+        paper-item:hover, paper-item:focus, paper-item:active {
+            background-color:lightgray;
+        }
+        .container {
+            @apply(--layout-horizontal);
+        }
+        .flexchild {
+            @apply(--layout-flex);
+        }
+    </style>
+    <template>
+        <paper-item class="container" toggles="true" on-dblclick="fireTransition">
+            <paper-item-body>
+                <div>{{transition.from}} --> {{transition.to}}</div>
+            </paper-item-body>
+            <div class="flexchild"></div>
+            <paper-icon-button icon="arrow-forward" title="fire" on-tap="fireTransition"></paper-icon-button>
+        </paper-item>
+    </template>
+</dom-module>

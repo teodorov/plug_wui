@@ -1,0 +1,23 @@
+name: 'plug_wui'
+version: 0.0.1
+description: A client web app for plug.
+author: Ciprian Teodorov <ciprian.teodorov@gmail.com>
+homepage: https://www.teodorov.ro
+
+environment:
+  sdk: '>=1.9.0 <2.0.0'
+
+dependencies:
+  browser: ^0.10.0
+  polymer_elements: ^1.0.0-rc.8
+  polymer: ^1.0.0-rc.15
+  web_components: ^0.12.0
+
+transformers:
+- polymer:
+    entry_points: web/index.html
+- $dart2js:
+    minify: true
+    commandLineOptions:
+    - --trust-type-annotations
+    - --trust-primitives

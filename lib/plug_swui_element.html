@@ -1,0 +1,23 @@
+<!--
+  Copyright (c) 2016, <your name>. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<dom-module id="plug-swui-element">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+      <paper-icon-button icon="autorenew" title="fire" on-tap="reset">reset</paper-icon-button>
+      <paper-icon-button icon="arrow-back" title="fire" on-tap="reset"></paper-icon-button>
+      <paper-button title="random" on-tap="reset">random</paper-button>
+
+      <transitions-provider fireables="{{fireables}}" runtime="{{runtime}}"></transitions-provider>
+      <transition-list fireables="{{fireables}}"></transition-list>
+
+      <configuration-provider conf="{{conf}}" runtime="{{runtime}}"></configuration-provider>
+      <configuration-view conf="{{conf}}"></configuration-view>
+  </template>
+</dom-module>
