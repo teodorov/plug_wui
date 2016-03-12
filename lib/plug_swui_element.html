@@ -12,12 +12,12 @@
   <template>
       <paper-icon-button icon="autorenew" title="fire" on-tap="reset">reset</paper-icon-button>
       <paper-icon-button icon="arrow-back" title="fire" on-tap="reset"></paper-icon-button>
-      <paper-button title="random" on-tap="reset">random</paper-button>
+      <paper-button title="random" on-tap="stepRandomly">random</paper-button>
 
-      <transitions-provider fireables="{{fireables}}" runtime="{{runtime}}"></transitions-provider>
+      <transitions-provider fireables="{{fireables}}" runtime="[[runtime]]"></transitions-provider>
       <transition-list fireables="{{fireables}}"></transition-list>
 
-      <configuration-provider conf="{{conf}}" runtime="{{runtime}}"></configuration-provider>
+      <configuration-provider conf="{{conf}}" runtime="[[runtime]]"></configuration-provider>
       <configuration-view conf="{{conf}}"></configuration-view>
   </template>
 </dom-module>

@@ -5,6 +5,7 @@ library plug_wui.lib.plug_swui_element;
 
 import 'dart:html';
 
+import 'dart:math';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
@@ -28,6 +29,15 @@ class PlugSimulationWUI extends PolymerElement {
       this.set('runtime', new MockExplicitRuntime(this));
     }
     runtime.initialize();
+  }
+
+  @property var fireables;
+  Random rnd = new Random();
+  @reflectable
+  stepRandomly(e, _) {
+    var index = rnd.nextInt(fireables.length);
+    print(index.toString() + " of " + fireables.length.toString());
+    runtime.fire((fireables as List).elementAt(index));
   }
 }
 
