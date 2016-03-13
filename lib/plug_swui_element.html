@@ -4,20 +4,37 @@
 -->
 
 <dom-module id="plug-swui-element">
-  <style>
-    :host {
-      display: block;
-    }
-  </style>
+    <style>
+        :host {
+            display: block;
+            @apply(--layout-horizontal);
+
+            background-color: gainsboro;
+        }
+        transition-list {
+            padding: 5px;
+        }
+        configuration-view {
+            padding: 5px;
+        }
+        .flex {
+            @apply(--layout-horizontal);
+        }
+    </style>
+
   <template>
-      <paper-icon-button icon="autorenew" title="fire" on-tap="reset">reset</paper-icon-button>
-      <paper-icon-button icon="arrow-back" title="fire" on-tap="reset"></paper-icon-button>
-      <paper-button title="random" on-tap="stepRandomly">random</paper-button>
+      <paper-toolbar>
+        <paper-icon-button icon="autorenew" title="fire" on-tap="reset">reset</paper-icon-button>
+      </paper-toolbar>
 
+      <!--the providers should be top level because of the dispatch event-->
       <transitions-provider fireables="{{fireables}}" runtime="[[runtime]]"></transitions-provider>
-      <transition-list fireables="{{fireables}}"></transition-list>
-
       <configuration-provider conf="{{conf}}" runtime="[[runtime]]"></configuration-provider>
-      <configuration-view conf="{{conf}}"></configuration-view>
+
+      <div class="container flex">
+          <transition-list fireables="{{fireables}}"></transition-list>
+
+          <configuration-view conf="{{conf}}"></configuration-view>
+      </div>
   </template>
 </dom-module>

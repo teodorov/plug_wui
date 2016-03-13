@@ -3,15 +3,27 @@
         :host {
             display: block;
         }
+        paper-card {
+            /*width : 400px;*/
+            /*height : 300px;*/
+            @apply(--layout-flex-3);
+        }
         iron-list {
             height : 200px;
         }
     </style>
     <template>
-        <iron-list scroll-target="html" items="{{fireables}}" as="item">
-            <template>
-                <transition-list-item transition="{{item}}" on-fire-transition="fireTransition"></transition-list-item>
-            </template>
-        </iron-list>
+        <paper-card heading="Fireable transitions">
+            <div class="card-content">
+                <iron-list scroll-target="html" items="{{fireables}}" as="item">
+                    <template>
+                        <transition-list-item transition="{{item}}"></transition-list-item>
+                    </template>
+                </iron-list>
+            </div>
+            <div class="card-actions">
+                <paper-icon-button icon="av:shuffle" title="random" on-tap="stepRandomly">random</paper-icon-button>
+            </div>
+        </paper-card>
     </template>
 </dom-module>

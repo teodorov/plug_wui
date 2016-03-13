@@ -1,5 +1,17 @@
 <dom-module id="configuration-view">
+    <style>
+        .card-content {
+            height: 200px;
+        }
+    </style>
     <template>
-        <p>Current ID: {{conf.id}} values: {{conf.values}}</p>
+        <paper-card heading="Current configuration">
+            <div class="card-content">
+                <p>Current ID: {{conf.id}} values: {{conf.values}}</p>
+            </div>
+            <div class="card-actions">
+                <paper-icon-button icon="" title="action">action</paper-icon-button>
+            </div>
+        </paper-card>
     </template>
 </dom-module>

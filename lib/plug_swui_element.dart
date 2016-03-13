@@ -5,7 +5,6 @@ library plug_wui.lib.plug_swui_element;
 
 import 'dart:html';
 
-import 'dart:math';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
@@ -14,6 +13,7 @@ import 'package:plug_wui/transitions_provider.dart';
 import 'package:plug_wui/transition_list.dart';
 import 'package:plug_wui/configuration_provider.dart';
 import 'package:plug_wui/configuration_view.dart';
+import 'package:polymer_elements/iron_flex_layout.dart';
 
 @PolymerRegister('plug-swui-element')
 class PlugSimulationWUI extends PolymerElement {
@@ -29,15 +29,6 @@ class PlugSimulationWUI extends PolymerElement {
       this.set('runtime', new MockExplicitRuntime(this));
     }
     runtime.initialize();
-  }
-
-  @property var fireables;
-  Random rnd = new Random();
-  @reflectable
-  stepRandomly(e, _) {
-    var index = rnd.nextInt(fireables.length);
-    print(index.toString() + " of " + fireables.length.toString());
-    runtime.fire((fireables as List).elementAt(index));
   }
 }
 
@@ -68,6 +59,7 @@ class MockExplicitRuntime extends JsProxy {
   fireConfigurationChanged() {
     CustomEvent evt =
         new CustomEvent('configuration-changed', detail: currentState);
+
     view.dispatchEvent(evt);
     view.childNodes.forEach((c) => c.dispatchEvent(evt));
   }
