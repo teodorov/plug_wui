@@ -9,12 +9,15 @@ import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
 import 'package:polymer_elements/paper_button.dart';
+import 'package:polymer_elements/iron_flex_layout.dart';
 import 'package:plug_wui/transitions_provider.dart';
 import 'package:plug_wui/transition_list.dart';
 import 'package:plug_wui/configuration_provider.dart';
 import 'package:plug_wui/configuration_view.dart';
-import 'package:polymer_elements/iron_flex_layout.dart';
+import 'package:plug_wui/history_view.dart';
+import 'package:plug_wui/file_upload.dart';
 
+/// Uses [TransitionsProvider], [FileUpload]
 @PolymerRegister('plug-swui-element')
 class PlugSimulationWUI extends PolymerElement {
   /// Constructor used to create instance of MainApp.

@@ -9,6 +9,11 @@
         .flexchild {
             @apply(--layout-flex);
         }
+        paper-item {
+            border-color: #333333;
+            border-bottom: dashed;
+            border-bottom-width: 1px;
+        }
     </style>
     <template>
         <paper-item class="container" toggles="true" on-dblclick="fireTransition">

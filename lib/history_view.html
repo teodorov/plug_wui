@@ -1,0 +1,25 @@
+<dom-module id="history-view">
+    <style>
+        iron-list {
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+        }
+        paper-item {
+            border-color: #333333;
+            border-bottom: dashed;
+            border-bottom-width: 1px;
+        }
+    </style>
+    <template>
+        <iron-list items="[[data]]" as="item" selectionEnabled="true">
+            <template>
+                <paper-item>
+                    <div class="card-content">
+                        Name: [[item.name]]
+                    </div>
+                </paper-item>
+            </template>
+        </iron-list>
+    </template>
+</dom-module>

@@ -7,7 +7,7 @@
     <style>
         :host {
             display: block;
-            @apply(--layout-horizontal);
+            /*@apply(--layout-horizontal);*/
 
             background-color: gainsboro;
         }
@@ -23,18 +23,27 @@
     </style>
 
   <template>
-      <paper-toolbar>
-        <paper-icon-button icon="autorenew" title="fire" on-tap="reset">reset</paper-icon-button>
-      </paper-toolbar>
-
       <!--the providers should be top level because of the dispatch event-->
       <transitions-provider fireables="{{fireables}}" runtime="[[runtime]]"></transitions-provider>
       <configuration-provider conf="{{conf}}" runtime="[[runtime]]"></configuration-provider>
 
       <div class="container flex">
+          <!--<paper-toolbar>-->
+              <paper-icon-button icon="autorenew" title="fire" on-tap="reset">reset</paper-icon-button>
+          <!--</paper-toolbar>-->
           <transition-list fireables="{{fireables}}"></transition-list>
 
           <configuration-view conf="{{conf}}"></configuration-view>
       </div>
+      <history-view></history-view>
+
+      <h2>Without drop enabled:</h2>
+      <file-upload>Choose File</file-upload>
+      
+      <h2>With drop enabled and images only:</h2>
+      <file-upload droppable="true" raised="true" multi="true" acceptedFileTypes="image/*">Choose File</file-upload>
+
+      <h2>Images only</h2>
+      <file-upload acceptedFileTypes="image/*" paper-button-title="demo title">Choose File</file-upload>
   </template>
 </dom-module>
