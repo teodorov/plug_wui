@@ -4,8 +4,10 @@ library my_project.web.index;
 
 import 'package:polymer/polymer.dart';
 import 'package:plug_wui/plug_swui_element.dart';
+import 'package:plug_wui/tree/force_graph.dart';
+import 'package:plug_wui/tree/dynamic_tree.dart';
 
-/// [PlugSimulationWUI] used!
+/// [PlugSimulationWUI], [ForceGraph], [DynamicTree] used!
 main() async {
   await initPolymer();
 }

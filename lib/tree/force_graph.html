@@ -1,0 +1,28 @@
+<dom-module id="force-graph">
+
+    <script src="packages/d3/d3.min.js" charset="utf-8"></script>
+    <style type="text/css">
+        :host {
+            display: block;
+        }
+        .node {
+            stroke: #fff;
+            stroke-width: 1.5px;
+            @apply(--force-graph-node);
+        }
+        .link {
+            stroke: #999;
+            stroke-opacity: .6;
+            @apply(--force-graph-link);
+        }
+    </style>
+
+
+
+    <template>
+        <h1>Graph begin</h1>
+        <svg id="svg"></svg>
+        <h1>Graph end</h1>
+    </template>
+
+</dom-module>

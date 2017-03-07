@@ -1,7 +1,6 @@
 @HtmlImport('configuration_provider.html')
 library plug_wui.lib.configuration_provider;
 
-import 'dart:html';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart';
 

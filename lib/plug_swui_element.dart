@@ -17,7 +17,8 @@ import 'package:plug_wui/configuration_view.dart';
 import 'package:plug_wui/history_view.dart';
 import 'package:plug_wui/file_upload.dart';
 
-/// Uses [TransitionsProvider], [FileUpload]
+/// Uses [TransitionsProvider], [FileUpload], [PaperIconButton], [PaperButton],
+/// [TransitionList], [ConfigurationProvider], [ConfigurationView], [HistoryView]
 @PolymerRegister('plug-swui-element')
 class PlugSimulationWUI extends PolymerElement {
   /// Constructor used to create instance of MainApp.

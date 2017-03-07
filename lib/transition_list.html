@@ -15,9 +15,9 @@
     <template>
         <paper-card heading="Fireable transitions">
             <div class="card-content">
-                <iron-list scroll-target="html" items="{{fireables}}" as="item">
+                <iron-list items="[[fireables]]" as="item">
                     <template>
-                        <transition-list-item transition="{{item}}"></transition-list-item>
+                        <transition-list-item transition="[[item]]"></transition-list-item>
                     </template>
                 </iron-list>
             </div>
